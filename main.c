@@ -3,23 +3,11 @@
 
 int main(){
     GRAPH a,b;
-    a.data = "****  ****
-              ****  ****
-                        
-              **********
-                  **    ";
-    (GRAPH*)a.next = &b;
-    b.data = "####  ####
-              ##########
-                ####  ##
-              #####    #
-              #####    #";
-    b.next = null;
-    GRAPH* now = &a;
-    while((GRAPH*)(now -> next) !=null){
-        printf("%s",next->data);
-        printf("\n==================");
-    }
-
+    char a_data[WIDTH*HIGHT] = "2228287319822739992200119922883377446633882298====";
+    a.data = a_data;
+    a.next = &b;
+    PAGE* first = Create_Page("HOME",&a,NULL,NULL);
+    Show_Page(first);
+    return 0;
 }
 

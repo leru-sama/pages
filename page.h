@@ -7,23 +7,22 @@
 typedef struct{
     u16 left[2];
     u16 right[2];
-    ICON* next;
+    void* next;
 }ICON;
 
 typedef struct{
-    u8  data[WIDTH][HIGHT];
-`   GRAPH* next;
+    char*  data;
+    void* next;
 }GRAPH;
 typedef struct{
     char* ID;
     GRAPH*  graph;
     ICON* icon;
-    u16 point[3];           //x,y,enter
+    u16* point;           //x,y,enter
 }PAGE;
 
-PAGE*   Create_Page(char*,u8*,u8*,u16*);
-
-
+PAGE*   Create_Page(char*ID,GRAPH*gra,ICON*icon,u16*point);
+void Show_Page(PAGE*);
 
 
 
