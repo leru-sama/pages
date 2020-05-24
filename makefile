@@ -1,11 +1,13 @@
-edit: main.o page.o
+
+
+edit:  main.o page.o
 	gcc -o edit main.o page.o
 
-main.o : main.c page.h sys.h
-	gcc -c main.c
+main.o : ./src/main.c  ./inc/page.h ./inc/sys.h
+	gcc -c ./src/main.c
 
-page.o : page.c sys.h page.h
-	gcc -c page.c
+page.o : ./src/page.c ./inc/sys.h ./inc/page.h
+	gcc -c ./src/page.c
 
 clean : 
 	rm edit main.o page.o	
