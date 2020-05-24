@@ -11,9 +11,10 @@ typedef struct{
 }APP;                       //apps on the screen , use list to store
 
 typedef struct{
-    u8*  data;            //graph data,please shap this as WIDTH*HIGHT(*DEEPTH)
-    void* next;             //if the graph includes more information like waterfall,next should point to a new graph
+    u8*  data;            //graph data,please shap this as WIDTH*hight(*DEEPTH)
+    u16  hight;           //hight = pixel/8 (for use a u8 data to discreb 8 pixel)
 }GRAPH;
+
 typedef struct{
     char* ID;
     GRAPH*  graph;
@@ -29,6 +30,8 @@ PAGE*   Create_Page(char*ID,GRAPH*gra,APP*icon,u16*point);
 //show
 void Show_Page(PAGE*);
 
+void Page_Up(PAGE*p,u8 pace);
+void Page_Down(PAGE*p,u8 pace);
 
 
 

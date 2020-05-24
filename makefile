@@ -1,13 +1,14 @@
+vpath %.h ./inc
+vpath %.c ./src
+objects = main.o page.o
 
+edit:  $(objects)
+	gcc -o edit $(objects)
 
-edit:  main.o page.o
-	gcc -o edit main.o page.o
+main.o :   page.h sys.h
 
-main.o : ./src/main.c  ./inc/page.h ./inc/sys.h
-	gcc -c ./src/main.c
+page.o :   sys.h page.h
 
-page.o : ./src/page.c ./inc/sys.h ./inc/page.h
-	gcc -c ./src/page.c
-
+.PHONY:clean
 clean : 
-	rm edit main.o page.o	
+	rm  $(objects)	
