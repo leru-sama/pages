@@ -1,4 +1,4 @@
-#include "../inc/page.h"
+#include "page.h"
 #include "stdlib.h"
 #include "stdio.h"
 
@@ -15,13 +15,7 @@ PAGE*   Create_Page(char* ID,GRAPH* gra,APP* app,u16* point){
 
 //show , it should be exchange by other drive code
 void Show_Page(PAGE* p){
-    for(int i=p->window_top;i<HIGHT+p->window_top;i++){
-        for(int j=0;j<WIDTH;j++)
-            if(i <= p->graph->hight)
-                printf("%c",p->graph->data[i*WIDTH+j]);
-            else printf(" ");
-        printf("\n");
-    }
+
 }
 
 void Page_Up(PAGE* p,u8 pace){
