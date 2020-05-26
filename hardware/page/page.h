@@ -1,5 +1,5 @@
 #include    "sys.h"
-
+#include    "../HARDWARE/GRAPH/graph.h"
 
 #define    WIDTH    10
 #define    HIGHT    5
@@ -10,10 +10,7 @@ typedef struct{
     void* next;             //next icon
 }APP;                       //apps on the screen , use list to store
 
-typedef struct{
-    u8*  data;            //graph data,please shap this as WIDTH*hight(*DEEPTH)
-    u16  hight;           //hight = pixel/8 (for use a u8 data to discreb 8 pixel)
-}GRAPH;
+
 
 typedef struct{
     char* ID;
